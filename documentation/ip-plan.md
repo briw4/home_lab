@@ -47,3 +47,17 @@ OPNsense acts as the central router/firewall between both networks and the inter
 - OPNsense monitors traffic via firewall rules and Suricata IDS on this interface
 
 ---
+## Server Network — 10.0.2.0/24
+
+**Subnet:** `10.0.2.0/24`  
+**Gateway:** `10.0.2.1` (OPNsense)
+
+| Device              | IP           | OS             | Role                              |
+|---------------------|-------------|----------------|-----------------------------------|
+| Active Directory DC | 10.0.2.10    | Windows Server | Active Directory + DNS server     |
+| Wazuh Server        | 10.0.2.20    | Linux          | SIEM, log collection & alerting  |
+
+**Notes:**
+- The Domain Controller provides DNS for all machines in the lab
+- All domain-joined machines use `10.0.2.10` as primary DNS
+- Wazuh collects and correlates security events from both networks
