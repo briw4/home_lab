@@ -21,3 +21,14 @@ This document describes the IP addressing scheme used in the home lab.
 | Server Network | 10.0.2.0/24    | 10.0.2.1    | Infrastructure servers         |
 
 ---
+## Firewall (OPNsense)
+
+OPNsense acts as the central router/firewall between both networks and the internet.
+
+| Interface      | IP Address   | Purpose                          |
+|----------------|-------------|----------------------------------|
+| WAN            | ISP/DHCP    | Internet access                  |
+| LAN (Client)   | 10.0.1.1    | Gateway for client network       |
+| OPT1 (Server)  | 10.0.2.1    | Gateway for server network       |
+
+---
