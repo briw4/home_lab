@@ -11,5 +11,13 @@ This document describes the IP addressing scheme used in the home lab.
 - Centralize authentication and DNS via Active Directory
 - Enable security monitoring with Wazuh SIEM
 - Control and inspect inter-network traffic with OPNsense
+---
 
+## Network
 
+| Network        | Subnet         | Gateway     | Purpose                        |
+|----------------|----------------|-------------|--------------------------------|
+| Client Network | 10.0.1.0/24    | 10.0.1.1    | User and security testing VM  |
+| Server Network | 10.0.2.0/24    | 10.0.2.1    | Infrastructure servers         |
+
+---
