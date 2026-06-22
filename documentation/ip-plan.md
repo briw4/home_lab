@@ -32,3 +32,18 @@ OPNsense acts as the central router/firewall between both networks and the inter
 | OPT1 (Server)  | 10.0.2.1    | Gateway for server network       |
 
 ---
+## Client Network — 10.0.1.0/24
+
+**Subnet:** `10.0.1.0/24`  
+**Gateway:** `10.0.1.1` (OPNsense)
+
+| Device       | IP           | OS            | Role                        |
+|--------------|-------------|---------------|-----------------------------|
+| Windows 10   | 10.0.1.10    | Windows 10    | Client workstation          |
+| Kali Linux   | 10.0.1.20    | Kali Linux     | Attacker / testing machine  |
+
+**Notes:**
+- Windows 10 and Kali Linux are on the same subnet for controlled attack and defense scenarios
+- OPNsense monitors traffic via firewall rules and Suricata IDS on this interface
+
+---
