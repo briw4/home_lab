@@ -11,7 +11,6 @@ This document describes the IP addressing scheme used in the home lab.
 - Centralize authentication and DNS via Active Directory
 - Enable security monitoring with Wazuh SIEM
 - Control and inspect inter-network traffic with OPNsense
----
 
 ## Network
 
@@ -20,7 +19,6 @@ This document describes the IP addressing scheme used in the home lab.
 | Client Network | 10.0.1.0/24    | 10.0.1.1    | User and security testing VM  |
 | Server Network | 10.0.2.0/24    | 10.0.2.1    | Infrastructure servers         |
 
----
 ## Firewall (OPNsense)
 
 OPNsense acts as the central router/firewall between both networks and the internet.
@@ -31,7 +29,6 @@ OPNsense acts as the central router/firewall between both networks and the inter
 | LAN (Client)   | 10.0.1.1    | Gateway for client network       |
 | OPT1 (Server)  | 10.0.2.1    | Gateway for server network       |
 
----
 ## Client Network — 10.0.1.0/24
 
 **Subnet:** `10.0.1.0/24`  
@@ -46,7 +43,6 @@ OPNsense acts as the central router/firewall between both networks and the inter
 - Windows 10 and Kali Linux are on the same subnet for controlled attack and defense scenarios
 - OPNsense monitors traffic via firewall rules and Suricata IDS on this interface
 
----
 ## Server Network — 10.0.2.0/24
 
 **Subnet:** `10.0.2.0/24`  
