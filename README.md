@@ -12,7 +12,6 @@ The goal is to build a realistic environment for:
 - SIEM monitoring and detection
 - Firewall and VLAN segmentation practice
 
----
 
 ## Current Status
 
@@ -22,7 +21,6 @@ The goal is to build a realistic environment for:
 ✖ Phase 4: Attack simulations (Kali Linux)  
 ✖ Phase 5: Detection & logging (Wazuh / Suricata)
 
----
 
 ## Current Architecture
 
@@ -30,7 +28,6 @@ The goal is to build a realistic environment for:
 - 10.0.2.0/24 → Server Network (AD, Wazuh)
 - OPNsense → Firewall / router between networks
 
----
 
 ## Disclaimer
 
