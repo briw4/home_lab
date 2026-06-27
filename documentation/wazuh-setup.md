@@ -56,23 +56,41 @@ bash wazuh-certs-tool.sh -A
 
 This creates a `wazuh-certificates/` folder with certs for all three components. Deploy them **before** starting any service.
 
+<img width="593" height="296" alt="image" src="https://github.com/user-attachments/assets/0605b0ad-cfd3-47f8-8233-dd00d86e3d1c" />
+
+
 ---
 
 ## Step 2 - Wazuh Indexer
 
 ### Install
 
-```bash
-apt-get install debconf adduser procps gnupg apt-transport-https
+1. Install the following packages if missing.
 
-curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring \
-  --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && \
-  chmod 644 /usr/share/keyrings/wazuh.gpg
+```
+apt-get install gnupg apt-transport-https
+```
 
-echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" \
-  | tee -a /etc/apt/sources.list.d/wazuh.list
+2. Install the GPG key.
 
-apt-get update
+```
+ curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg
+```
+
+3. Add the repository.
+
+```
+ echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list
+```
+
+4. Update the packages information.
+
+```
+ apt-get update
+```
+5. Install the Wazuh indexer package.
+
+```
 apt-get -y install wazuh-indexer
 ```
 
@@ -166,8 +184,7 @@ apt-get -y install filebeat
 ### Configure Filebeat
 
 ```bash
-curl -so /etc/filebeat/filebeat.yml \
-  https://packages.wazuh.com/4.14/tpl/wazuh/filebeat/filebeat.yml
+curl -so /etc/filebeat/filebeat.yml https://packages.wazuh.com/4.14/tpl/wazuh/filebeat/filebeat.yml
 ```
 
 In `/etc/filebeat/filebeat.yml`, set the indexer IP:
@@ -191,8 +208,7 @@ echo admin | filebeat keystore add password --stdin --force
 Download the Wazuh alerts template:
 
 ```bash
-curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.5.tar.gz \
-  | tar -xvz -C /usr/share/filebeat/module
+curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.5.tar.gz tar -xvz -C /usr/share/filebeat/module
 ```
 
 ### Deploy certificates for Filebeat
