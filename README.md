@@ -17,7 +17,7 @@ The goal is to build a realistic environment for:
 
 ✔ Phase 1: Network design and architecture (IN PROGRESS)  
 ✔ Phase 2: OPNsense setup (PLANNED)  
-✖ Phase 3: Active Directory deployment  
+✔ Phase 3: Active Directory deployment  
 ✖ Phase 4: Attack simulations (Kali Linux)  
 ✖ Phase 5: Detection & logging (Wazuh / Suricata)
 
